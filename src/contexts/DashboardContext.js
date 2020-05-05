@@ -29,7 +29,24 @@ export const withDashboard = Comp => {
 export default class DashboardProvider extends Component {
 
     state = {
-        list: localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : []
+        list: localStorage.getItem('list') ?
+            JSON.parse(localStorage.getItem('list')) :
+            [
+                { title: "Ongoing Matters", active: true },
+                { title: "Matters closed this month", active: true },
+                { title: "Avg. Matters per Lawyer", active: true },
+                { title: "Expenses this month", active: true },
+                { title: "Active Cases with external help", active: true },
+                { title: "Average time to close case", active: true },
+                { title: "Average spend on case", active: true },
+                { title: "Total Matters resolved", active: true },
+                { title: "Case Updates", active: true },
+                { title: "Employees Status", active: true },
+                { title: "Active Matters by Category", active: true },
+                { title: "Internal vs. External Cost", active: true },
+                { title: "Active Matters by Department", active: true },
+                { title: "Internal Customer Satisfaction", active: true },
+            ]
     };
 
     constructor(props) {
