@@ -22,8 +22,8 @@ function caseUpdates({ matters }) {
                 </tr>
               </thead>
               <tbody>
-                {matters.slice(0, 5).map((matter) => (
-                  <tr className="unread">
+                {matters.slice(0, 5).map((matter, i) => (
+                  <tr className="unread" key={i}>
                     <td>
                       <h6 className="mb-1">{matter.company}</h6>
                       <p className="m-0">{matter.matterType}</p>

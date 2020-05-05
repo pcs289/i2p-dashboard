@@ -20,8 +20,8 @@ export default function EmployeeStatus({ employeeStatus }) {
                 </tr>
               </thead>
               <tbody>
-                {employeeStatus.slice(0, 5).map((employee) => (
-                  <tr>
+                {employeeStatus.slice(0, 5).map((employee, i) => (
+                  <tr key={i}>
                     <td>
                       <h6 className="m-0">
                         <img

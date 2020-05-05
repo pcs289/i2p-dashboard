@@ -5,9 +5,7 @@ export class Header extends Component {
         return (
             <header className="navbar pcoded-header navbar-expand-lg navbar-light">
                 <div className="m-header">
-                    <a className="mobile-menu" id="mobile-collapse1" href="javascript:"
-                    ><span></span
-                    ></a>
+                    <a className="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
                     <a href="index.html" className="b-brand">
                         <div className="b-bg">
                             <i className="feather icon-trending-up"></i>
