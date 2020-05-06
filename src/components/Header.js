@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+const $ = window.$;
 
 export class Header extends Component {
+
+    toggleMobileNavbar() {
+        console.log('Toggle');
+        $('.pcoded-navbar').toggleClass('mob-open');
+    }
+
     render() {
         return (
             <header className="navbar pcoded-header navbar-expand-lg navbar-light">
                 <div className="m-header">
-                    <a className="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
-                    <a href="index.html" className="b-brand">
+                    <a className="mobile-menu" id="mobile-collapse1" onClick={() => this.toggleMobileNavbar()}><span></span></a>
+                    <a href="" className="b-brand">
                         <div className="b-bg">
-                            <i className="feather icon-trending-up"></i>
+                            <i className="feather icon-bar-chart-2"></i>
                         </div>
                         <span className="b-title">Legal Dashboard</span>
                     </a>

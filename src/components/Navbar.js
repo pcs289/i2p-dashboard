@@ -18,7 +18,7 @@ export class Navbar extends Component {
                         <li className={location.pathname === '/' ? "nav-item active" : "nav-item"}>
                             <Link className="nav-link" to="/">
                                 <span className="pcoded-micon">
-                                    <i className="feather icon-home"></i>
+                                    <i className="feather icon-bar-chart-2"></i>
                                 </span>
                                 <span className="pcoded-mtext">Legal Dashboard</span>
                             </Link>
