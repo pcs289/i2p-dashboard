@@ -33,18 +33,18 @@ $(document).ready(function () {
       element: "internal-vs-external",
       data: [
         {
-          value: 2,
+          value: 54,
           label: "Internal",
         },
         {
-          value: 1,
+          value: 46,
           label: "External",
         },
       ],
       colors: ["#1de9b6", "#A389D4", "#04a9f5", "#1dc4e9"],
       resize: true,
       formatter: function (x) {
-        return x + " Matters";
+        return x + " %";
       },
     });
     // Matters by department
