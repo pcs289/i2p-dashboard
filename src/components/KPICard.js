@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import CustomModal from "./CustomModal";
 
 function KPICard({ title, value }) {
   const [change, setChange] = useState("");
+
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const makeRandomNumber = () => {
@@ -19,10 +22,14 @@ function KPICard({ title, value }) {
     makeRandomNumber();
   }, []);
 
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="col-md-6 col-xl-3">
       <div className="card daily-sales">
-        <div className="card-block">
+        <div className="card-block" onClick={() => setShowModal(true)}>
           <h6 className="mb-4">{title}</h6>
           <div className="row d-flex align-items-center">
             <div className="col-9">
@@ -35,13 +42,13 @@ function KPICard({ title, value }) {
                 {value}
               </h3>
             </div>
-
             <div className="col-10 text-left pt-2">
               <p className="m-b-0">{change}% compared to average</p>
             </div>
           </div>
         </div>
       </div>
+      <CustomModal showModal={showModal} title={title} handleClose={handleClose} />
     </div>
   );
 }

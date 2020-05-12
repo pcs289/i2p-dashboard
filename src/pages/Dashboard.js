@@ -27,19 +27,16 @@ class Dashboard extends Component {
                         isActive(KPI.title) ? <KPICard key={i} title={KPI.title} value={KPI.value} /> : null
                     ))}
                     {/* KPI List End */}
-                    <SubHeading text="Matter Details" />
+                    { isActive('Case Updates') || isActive('Employees Status') ? <SubHeading text="Matter Details" /> : null }
                     { isActive('Case Updates') ? <CaseUpdates matters={ongoingMatters} /> : null }
                     { isActive('Employees Status') ? <EmployeeStatus employeeStatus={employeeStatus} /> : null }
 
-                    <SubHeading text="Active Cases" />
+                    { isActive('Active Matters by Category') || isActive('Internal vs. External Cost') || isActive('Active Matters by Department') ? <SubHeading text="Active Cases" /> : null }
                     { isActive('Active Matters by Category') ? <PieChart title="Active Matters by Category" id="matters-by-category" /> : null }
-
                     { isActive('Internal vs. External Cost') ? <PieChart title="Internal vs. External Cost" id="internal-vs-external"/> : null }
-
                     { isActive('Active Matters by Department') ? <PieChart title="Active Matters by Department" id="matters-by-department"/> : null }
 
-                    <SubHeading text="Client Details" />
-                    { isActive('Internal Customer Satisfaction') ? <InternalSatisfaction /> : null }
+                    { isActive('Internal Customer Satisfaction') ? <><SubHeading text="Client Details" /> <InternalSatisfaction /></> : null }
                 </div>
             </DashboardWrapper>
         </>);
