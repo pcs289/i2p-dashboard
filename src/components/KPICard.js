@@ -27,7 +27,7 @@ function KPICard({ title, value }) {
   };
 
   return (
-    <div className="col-md-6 col-xl-3">
+    <div className="col-md-6 col-xl-3" style={{ cursor: "pointer" }}>
       <div className="card daily-sales">
         <div className="card-block" onClick={() => setShowModal(true)}>
           <h6 className="mb-4">{title}</h6>
@@ -48,7 +48,12 @@ function KPICard({ title, value }) {
           </div>
         </div>
       </div>
-      <CustomModal showModal={showModal} title={title} handleClose={handleClose} />
+      <CustomModal
+        showModal={showModal}
+        title={title}
+        handleClose={handleClose}
+        value={value}
+      />
     </div>
   );
 }
