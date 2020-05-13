@@ -17,7 +17,11 @@ function CustomModal({ showModal, handleClose, title, value }) {
       val = value;
     }
 
-    const change = Math.random();
+    let change = Math.random();
+    // make sure change is not too low
+    while (change < 0.2) {
+      change = Math.random();
+    }
     // this is for the current month where we need to display the current value
     if (last) {
       return val;
